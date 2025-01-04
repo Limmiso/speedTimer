@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#162247"
+    tools:context=".TimerFragment">
+
+    <TextView
+        android:id="@+id/ck_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="00:00:00"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="#AEC979"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingStart="30dp"
+        android:paddingTop="30dp" />
+
+    <View
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/circle"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"></View>
+
+    <ImageView
+        android:id="@+id/music"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/img"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </ImageView>
+
+    <!-- 타이머 입력 필드 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="-267dp">
+
+        <TextView
+            android:id="@+id/tv_countdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="00dp"
+            android:text="00:00:00"
+            android:textColor="#AEC979"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+
+            <!-- EditText들 -->
+            <EditText
+                android:id="@+id/et_hour"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:ems="2"
+                android:hint="시"
+                android:textSize="25dp"
+                android:textColor="#79AEBD"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:textColorHint="#79AEBD" />
+
+            <TextView
+                android:id="@+id/dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:text=" : "
+                android:textColor="#79AEBD"
+                />
+
+            <EditText
+                android:id="@+id/et_minute"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:ems="2"
+                android:hint="분"
+                android:textSize="25dp"
+                android:textColor="#79AEBD"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:textColorHint="#79AEBD" />
+
+            <TextView
+                android:id="@+id/d_ot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" : "
+                android:textSize="25dp"
+                android:textColor="#79AEBD"
+                />
+
+            <EditText
+                android:id="@+id/et_second"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:ems="2"
+                android:hint="초"
+                android:textSize="25dp"
+                android:textColor="#79AEBD"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:textColorHint="#79AEBD" />
+
+        </LinearLayout>
+        <NumberPicker
+            android:id="@+id/numberPicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.NumberPicker"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:text="시작"
+            android:textSize="20dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_countdown"
+            />
+
+        <!-- 가로모드에서의 Button 위치 설정 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/btn_start">
+
+            <Button
+                android:id="@+id/btn_clear"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:text="초기화"
+                android:textSize="20dp"
+                />
+
+            <Button
+                android:id="@+id/btn_stop_timer"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:text="타이머 중지"
+                android:textSize="20dp"
+                />
+
+            <Button
+                android:id="@+id/btn_resume_timer"
+                android:layout_width="150dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="15dp"
+                android:text="타이머 재시작"
+                android:textSize="15dp"
+                android:visibility="gone"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/btn_record"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:text="기록 및 초기화"
+            android:textSize="15dp"
+            />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
